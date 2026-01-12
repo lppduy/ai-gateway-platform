@@ -1,0 +1,54 @@
+# AI Gateway Platform - Cursor Rules
+
+## Project Context
+Building a cost-effective AI Gateway with multi-tenancy support in Java Spring Boot.
+
+## Code Standards
+- Use Spring Boot 3.x with WebFlux (reactive programming)
+- Follow standard Spring project structure
+- Use constructor injection (not @Autowired field injection)
+- Prefer records for DTOs (Java 17+)
+- Use Lombok for reducing boilerplate
+
+## Architecture Patterns
+- Controller → Service → Client (adapter) pattern
+- Controllers: Handle HTTP, validation, return reactive types
+- Services: Business logic, rate limiting, cost calculation
+- Clients: External API calls (OpenAI, Anthropic, etc.)
+
+## Package Structure
+- Base package: com.lppduy.aigateway
+
+## Naming Conventions
+- Controllers: `*Controller` (e.g., ChatController)
+- Services: `*Service` (e.g., RateLimitService)
+- Clients: `*Client` (e.g., OpenAIClient)
+- DTOs: `*Request`, `*Response`
+- Config: `*Config`
+
+## Code Style
+- Use meaningful variable names
+- Add JavaDoc for public methods
+- Include error handling for all external calls
+- Log important operations (use SLF4J)
+- Write defensive code with validation
+
+## Testing
+- Use JUnit 5 + Mockito
+- Test services thoroughly
+- Mock external API calls (use MockWebServer)
+- Integration tests for critical flows
+
+## When Generating Code
+1. Follow reactive patterns (Mono/Flux)
+2. Handle errors with proper HTTP status codes
+3. Include request/response logging
+4. Add input validation
+5. Consider performance (non-blocking I/O)
+
+## Common Pitfalls to Avoid
+- Don't block in reactive code (no .block() in production)
+- Don't forget to handle empty Mono/Flux
+- Always set timeouts for external calls
+- Don't expose internal errors to clients
+
