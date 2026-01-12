@@ -9,6 +9,10 @@ target/
 .env.local
 *.env
 
+### OS ###
+.DS_Store
+Thumbs.db
+
 ### STS ###
 .apt_generated
 .classpath

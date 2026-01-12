@@ -2,7 +2,7 @@
 
 [![CI](https://github.com/lppduy/ai-gateway-platform/actions/workflows/ci.yml/badge.svg)](https://github.com/lppduy/ai-gateway-platform/actions/workflows/ci.yml)
 
-> Cost-effective AI Gateway with multi-tenancy, rate limiting, and provider fallback
+> Backend API for AI Gateway - Cost-effective gateway with multi-tenancy, rate limiting, and provider fallback
 
 ## Quick Start
 
